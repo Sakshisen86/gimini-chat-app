@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
 .main {
   flex: 1;
   min-height: 100px;
   padding-bottom: 15vh;
   position: relative;
+  background: #ffffff;
 }
 
 .main .nav {
@@ -10,14 +18,16 @@
   align-items: center;
   justify-content: space-between;
   font-size: 22px;
-  padding: 20px;
-  color: #585858;
+  padding: 20px 30px;
+  color: #4b4b4b;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .main .nav img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
+  border: 2px solid #e1e1e1;
 }
 
 .main-container {
@@ -26,52 +36,57 @@
 }
 
 .main .greet {
-  margin: 50px 0px;
-  font-size: 56px;
-  color: #c4c7c5;
-  font-weight: 500;
-  padding: 20px;
+  margin: 40px 0px;
+  font-size: 52px;
+  color: #3c3f45;
+  font-weight: 600;
+  padding: 20px 30px;
 }
 
 .main .greet span {
-  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  background: linear-gradient(45deg, #4b90ff, #ff5546);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .main .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 30px;
 }
 
 .main .card {
-  height: 200px;
-  padding: 15px;
-  background-color: #f0f4f9;
-  border-radius: 10px;
+  height: 180px;
+  padding: 18px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
   position: relative;
   cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.main .card:hover {
+  background-color: #e6efff;
+  transform: translateY(-2px);
 }
 
 .main .card img {
-  width: 35px;
+  width: 36px;
   padding: 5px;
   position: absolute;
   background-color: white;
   border-radius: 50%;
-  bottom: 10px;
-  right: 10px;
+  bottom: 12px;
+  right: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .main .card p {
-  color: #585858;
-  font-size: 17px;
-}
-
-.main .card:hover {
-  background-color: #dfe4ea;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .main-bottom {
@@ -79,7 +94,7 @@
   bottom: 0;
   width: 100%;
   max-width: 900px;
-  padding: 0 20px;
+  padding: 0 30px;
   margin: auto;
 }
 
@@ -89,13 +104,22 @@
   justify-content: space-between;
   gap: 20px;
   background-color: #f0f4f9;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border-radius: 50px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.05);
 }
 
 .search-box img {
-  width: 24px;
+  width: 26px;
   cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s ease;
+}
+
+.search-box img:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .search-box input {
@@ -103,8 +127,8 @@
   background: transparent;
   border: none;
   outline: none;
+  font-size: 17px;
   padding: 8px;
-  font-size: 18px;
 }
 
 .search-box div {
@@ -113,45 +137,52 @@
   gap: 15px;
 }
 
-.main-bottom-info {
+.bottom-info {
   font-size: 13px;
   margin: 15px auto;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
+  color: #999;
 }
 
 .result {
   padding: 0 5%;
   max-height: 70vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .result::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+.result::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
 }
 
 .result-title {
-  margin: 40px 0;
+  margin: 30px 0;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .result img {
-  width: 20px;
+  width: 22px;
   border-radius: 50%;
 }
 
 .result-data {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 15px;
 }
 
 .result-data p {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #333;
 }
 
 .loader {
@@ -164,7 +195,6 @@
 .loader hr {
   border-radius: 4px;
   border: none;
-  background-color: #f6f7f8;
   background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
   background-size: 800px 50px;
   height: 20px;
@@ -182,20 +212,24 @@
 
 /* Responsive Fixes */
 @media (max-width: 600px) {
-  .main-bottom input {
-    flex: none;
-    width: 150px;
+  .main .greet {
+    font-size: 34px;
   }
 
-  .main-bottom img {
-    width: 20px;
+  .main-bottom input {
+    flex: none;
+    width: 160px;
   }
 
   .search-box {
-    padding: 5px 10px;
+    padding: 8px 12px;
+  }
+
+  .search-box img {
+    width: 20px;
   }
 
   .search-box div {
-    gap: 5px;
+    gap: 10px;
   }
 }

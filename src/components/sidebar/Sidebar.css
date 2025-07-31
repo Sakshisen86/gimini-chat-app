@@ -3,12 +3,16 @@
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f0f4f9;
+    background: linear-gradient(160deg, #4b90ff, #ff6f61);
     padding: 25px 15px;
+    color: white;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .sidebar img {
     width: 20px;
+    filter: brightness(0) invert(1); /* white icons */
 }
 
 .sidebar .menu {
@@ -23,11 +27,16 @@
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    background-color: #e6eaf1;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50px;
     font-size: 14px;
-    color: gray;
+    color: white;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar .new-chat:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .sidebar .recent {
@@ -39,35 +48,57 @@
 .sidebar .recent-title {
     margin-top: 30px;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
 }
 
 .sidebar .recent-entery {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 10px;
     padding: 10px;
     padding-right: 40px;
-    border-radius: 50px;
-    color: #282828;
+    border-radius: 20px;
+    color: white;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .sidebar .recent-entery:hover {
-    background-color: #e2e6eb;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sidebar .bottom {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .sidebar .bottom-item {
-    padding-right: 10px;
+    padding: 10px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-@media (max-width:600px){
-    .sidebar{
+.sidebar .bottom-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+    .sidebar {
         display: none;
+    }
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
